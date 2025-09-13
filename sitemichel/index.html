@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TRIAD AEROSPACE LL</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Premium aviation parts and specialized technical support. Agile service, advanced catalog, and reliable delivery.">
+  <meta property="og:title" content="TRIAD AEROSPACE LL">
+  <meta property="og:description" content="Premium aviation parts and specialized technical support.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --bg-1: #0b1220;
+      --bg-2: #121a2b;
+      --bg-3: #0f1a2e;
+      --card: rgba(20, 28, 44, 0.72);
+      --border: rgba(255, 255, 255, 0.08);
+      --ring: rgba(59, 130, 246, 0.35);
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1000px 600px at 10% -10%, #0b2540 0%, transparent 60%),
+                  radial-gradient(900px 600px at 90% -20%, #112a46 0%, transparent 60%),
+                  linear-gradient(to bottom, var(--bg-1), var(--bg-2) 50%, var(--bg-3));
+    }
+    .glass {
+      backdrop-filter: saturate(1.25) blur(10px);
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+    .tech-grid {
+      position: relative;
+      isolation: isolate;
+    }
+    .tech-grid::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+      background-size: 22px 22px;
+      mask-image: radial-gradient(80% 60% at 50% 0%, black 10%, transparent 70%);
+      opacity: 0.6;
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 700ms ease-out forwards;
+    }
+    .fade-in-1 { animation-delay: .15s; }
+    .fade-in-2 { animation-delay: .3s; }
+    .fade-in-3 { animation-delay: .45s; }
+    
+    .hover-pop { 
+      transition: transform .25s, box-shadow .25s;
+      transform: translateZ(0);
+    }
+    .hover-pop:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 7px 30px -10px var(--ring); 
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    
+    @keyframes slideInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .popup-animate {
+        animation: slideInUp 500ms ease-out forwards;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+    .focus-ring:focus-visible {
+      outline: 2px solid rgba(59,130,246,0.7);
+      outline-offset: 2px;
+      border-radius: .75rem;
+    }
+    @media (max-width: 768px) {
+        .parallax-bg {
+            background-attachment: scroll;
+        }
+    }
+  </style>
+</head>
+<body class="text-slate-200 antialiased selection:bg-blue-500/20 selection:text-blue-100">
+
+  <header class="sticky top-0 z-50 bg-[#0b1220] border-b border-slate-800 shadow">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="./index.html" class="flex items-center gap-3">
+          <img src="./img/logo.png" alt="Triad Logo" class="h-10 w-10 rounded-lg border border-blue-400/40 shadow"/>
+          <span class="font-extrabold text-lg tracking-wide text-blue-200">TRIAD AEROSPACE</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 font-medium">
+          <a href="./index.html" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">Home</a>
+          <a href="#about" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">About</a>
+          <a href="#services" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">Services</a>
+          <a href="#parts" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">Parts</a>
+          <a href="#contact" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">Quote</a>
+          <a href="./privacy.html" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">Privacy</a>
+        </div>
+
+        <button id="mobile-menu-button"
+                class="md:hidden p-2 text-slate-200 hover:text-white focus-ring"
+                aria-label="Open menu"
+                aria-haspopup="true"
+                aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-8 6h8" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="menu-backdrop" class="fixed inset-0 bg-black/60 z-30 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out"></div>
+  
+  <div id="mobile-menu" class="fixed top-0 left-0 h-full w-full max-w-xs bg-[#0b1220] z-40 p-6 shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="flex justify-end mb-8">
+      <button id="close-menu-button" class="p-2 text-slate-200 hover:text-white focus-ring" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col space-y-6">
+      <a href="./index.html" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">Home</a>
+      <a href="#about" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">About</a>
+      <a href="#services" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">Services</a>
+      <a href="#parts" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">Parts</a>
+      <a href="#contact" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">Quote</a>
+      <a href="./privacy.html" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">Privacy</a>
+    </nav>
+  </div>
+
+  <main class="tech-grid">
+    <section class="relative text-center overflow-hidden bg-cover bg-center" style="background-image: url('./img/azas.png');">
+        <div class="absolute inset-0 bg-slate-900/70"></div>
+        <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-16 lg:py-20 flex flex-col items-center">
+            <p class="fade-in text-xs font-semibold uppercase tracking-[0.2em] text-blue-300/80">Aviation Components</p>
+            <h1 class="fade-in fade-in-1 mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+              Premium Aviation Parts
+            </h1>
+            <p class="fade-in fade-in-2 mt-5 text-lg sm:text-xl text-slate-300 max-w-2xl">
+              Your reliable partner for aircraft materials: agility, qualified stock, and technical support to keep your fleet in the air stress-free.
+            </p>
+        </div>
+    </section>
+    
+    <section id="about" class="relative z-10 py-16 sm:py-20 -mt-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="glass rounded-3xl p-8 sm:p-12 hover-pop">
+          <div class="flex flex-col-reverse lg:flex-row items-center gap-10">
+            <div class="flex-1">
+              <h2 class="text-3xl sm:text-4xl font-bold text-blue-300">About Triad Aerospace</h2>
+              <p class="mt-4 text-slate-300 text-lg">
+                Strategically located near Miami International Airport for agile logistics, serving airlines and global brokers with aircraft component procurement and supply.
+              </p>
+              <p class="mt-3 text-slate-300 text-lg">
+                Expertise, reliability, and turbocharged service to keep operations flying high—from quote to delivery, end-to-end.
+              </p>
+            </div>
+            <img src="./img/logo.png" alt="Triad Aerospace logo and brand" class="w-64 lg:w-80 rounded-2xl border border-slate-700/60 shadow-xl"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div 
+      class="relative w-full aspect-[3/1] lg:aspect-[5/1] bg-cover bg-center parallax-bg" 
+      style="background-image: url('./img/avioanova.png');"
+      aria-label="Close-up of an aircraft turbine">
+      <div class="absolute inset-0 bg-slate-900/70"></div>
+    </div>
+
+    <section id="services" class="py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold text-blue-300 text-center">Our Services</h2>
+        <div class="mt-10 grid gap-6 sm:gap-8 md:grid-cols-2">
+          <div class="glass rounded-2xl p-7 sm:p-8 hover-pop">
+            <h3 class="text-xl font-semibold text-blue-200">Hard-to-Find Items</h3>
+            <p class="mt-2 text-slate-300">
+              Sourcing rare parts through a global network of suppliers, optimized lead times, and technical curation for "impossible" missions.
+            </p>
+          </div>
+          <div class="glass rounded-2xl p-7 sm:p-8 hover-pop">
+            <h3 class="text-xl font-semibold text-blue-200">Specialists & Support</h3>
+            <p class="mt-2 text-slate-300">
+              Customized consulting and technical assistance, from diagnosis to replacement, with clear communication and priority on availability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div 
+      class="relative w-full aspect-[3/1] lg:aspect-[5/1] bg-cover bg-center parallax-bg"
+      style="background-image: url('./img/turbinenew.png');"
+      aria-label="Aircraft in a hangar">
+      <div class="absolute inset-0 bg-slate-900/70"></div>
+    </div>
+
+    <section id="parts" class="bg-slate-900/40 py-16 sm:py-20 border-y border-slate-800">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold text-blue-300 text-center">Parts Catalog</h2>
+        <div class="mt-10 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div class="glass rounded-2xl p-6 sm:p-7 hover-pop">
+            <h3 class="text-xl font-semibold text-blue-200">Aircraft Systems</h3>
+            <ul class="mt-3 space-y-2 text-slate-300">
+              <li>21 Air Conditioning</li>
+              <li>22 Auto Flight</li>
+              <li>23 Communications</li>
+              <li>24 Electrical Power</li>
+              <li>25 Equipment/Furnishings</li>
+              <li>26 Fire Protection</li>
+              <li>27 Flight Controls</li>
+              <li>28 Fuel</li>
+              <li>29 Hydraulic Power</li>
+              <li>30 Ice Rain Protection</li>
+            </ul>
+          </div>
+          <div class="glass rounded-2xl p-6 sm:p-7 hover-pop">
+            <h3 class="text-xl font-semibold text-blue-200">Structures & Powerplant</h3>
+            <ul class="mt-3 space-y-2 text-slate-300">
+              <li>50 Cargo Compartments</li>
+              <li>51 Structures General</li>
+              <li>52 Doors, 53 Fuselage...</li>
+              <li>55 Stabilizers, 56 Windows...</li>
+              <li>57 Wings</li>
+              <li>61 Propulsion, 62 Rotors...</li>
+              <li>70-84 Power Plant/Engine</li>
+            </ul>
+          </div>
+          <div class="glass rounded-2xl p-6 sm:p-7 hover-pop">
+            <h3 class="text-xl font-semibold text-blue-200">Others</h3>
+            <ul class="mt-3 space-y-2 text-slate-300">
+              <li>91 Charts</li>
+              <li>97 Wiring Reporting</li>
+              <li>100 Tech Data</li>
+              <li>103 Jet Fuel Quality</li>
+              <li>104-106 Training</li>
+              <li>115-117 Simulators & Cuing</li>
+              <li>300300 Pa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-16 sm:py-20">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <div class="glass rounded-2xl p-8 sm:p-10 hover-pop">
+          <h2 class="text-3xl sm:text-4xl font-bold text-blue-300 text-center">Contact Us</h2>
+          <div class="mt-6 grid gap-3 text-slate-300 text-base sm:text-lg text-center">
+            <p><span class="font-semibold text-blue-200">Name:</span> TRIAD AEROSPACE LL</p>
+            <p><span class="font-semibold text-blue-200">Address:</span> 1282 LA QUINTA DR UNIT 4, ORLANDO FL, USA, 32809</p>
+            <p><span class="font-semibold text-blue-200">Tel:</span> <a href="tel:+14076102439" class="text-blue-300 hover:underline">+1 407 610 2439</a></p>
+            <p><span class="font-semibold text-blue-200">Email:</span> <a href="mailto:sales@triadaerospace.com" class="text-blue-300 hover:underline">sales@triadaerospace.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative text-center text-slate-100 py-10 border-t border-slate-800"
+          style="background: url('./img/turbinenew.png') center/cover no-repeat;">
+    <div class="absolute inset-0 bg-black/70 pointer-events-none"></div>
+    <div class="relative z-10 space-y-2">
+      <p class="font-bold text-lg">TRIAD AEROSPACE LL &copy; 2025</p>
+      <p>Built with technology and passion for aviation 🚀</p>
+      <div>
+        <a href="./privacy.html" class="text-sm text-slate-300 hover:underline">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="privacy-popup" class="fixed bottom-4 left-4 z-50 max-w-sm glass rounded-xl p-5 hidden border-2 border-blue-500 shadow-lg"> 
+    <div class="flex items-start gap-4">
+      <img src="./img/logo.png" alt="Triad Logo" class="h-10 w-10 rounded-lg border border-blue-400/40 shadow-lg"/>
+      <div>
+        <h4 class="font-bold text-blue-200">Privacy & Cookies</h4>
+        <p class="text-sm text-slate-300 mt-1">
+          We use cookies to enhance your browsing experience. By using our site, you agree to our <a href="./privacy.html" class="text-blue-300 font-semibold underline hover:text-blue-200">Privacy Policy</a>.
+        </p>
+        <div class="flex gap-3 mt-4">
+          <button id="deny-cookies" class="flex-1 rounded-md px-3 py-1.5 text-sm font-semibold text-slate-300 bg-slate-700/50 hover:bg-slate-700/80 transition-colors focus-ring">
+            Deny
+          </button>
+          <button id="accept-cookies" class="flex-1 rounded-md px-3 py-1.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 transition-colors focus-ring">
+            Accept
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- MENU LOGIC ---
+      const openMenuBtn = document.getElementById('mobile-menu-button');
+      const closeMenuBtn = document.getElementById('close-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const backdrop = document.getElementById('menu-backdrop');
+      const menuLinks = mobileMenu.querySelectorAll('a');
+
+      const openMenu = () => {
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100', 'pointer-events-auto');
+        mobileMenu.classList.remove('-translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+        document.body.style.overflow = 'hidden';
+        openMenuBtn.setAttribute('aria-expanded', 'true');
+      };
+
+      const closeMenu = () => {
+        mobileMenu.classList.add('-translate-x-full');
+        mobileMenu.classList.remove('translate-x-0');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+        document.body.style.overflow = '';
+        openMenuBtn.setAttribute('aria-expanded', 'false');
+      };
+
+      openMenuBtn.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('-translate-x-full')) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      });
+
+      closeMenuBtn.addEventListener('click', closeMenu);
+      backdrop.addEventListener('click', closeMenu);
+      menuLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('-translate-x-full')) {
+          closeMenu();
+        }
+      });
+
+      // --- PRIVACY POPUP LOGIC ---
+      const privacyPopup = document.getElementById('privacy-popup');
+      const acceptBtn = document.getElementById('accept-cookies');
+      const denyBtn = document.getElementById('deny-cookies');
+
+      if (!localStorage.getItem('privacyConsent')) {
+        setTimeout(() => {
+          privacyPopup.classList.remove('hidden');
+          privacyPopup.classList.add('popup-animate');
+        }, 2000);
+      }
+
+      const handleConsent = (consent) => {
+        localStorage.setItem('privacyConsent', consent);
+        privacyPopup.style.display = 'none';
+      };
+
+      acceptBtn.addEventListener('click', () => handleConsent('accepted'));
+      denyBtn.addEventListener('click', () => handleConsent('denied'));
+    });
+  </script>
+
+</body>
+</html>

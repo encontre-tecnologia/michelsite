@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy - TRIAD AEROSPACE LL</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-1: #0b1220;
+      --bg-2: #121a2b;
+      --bg-3: #0f1a2e;
+      --card: rgba(20, 28, 44, 0.72);
+      --border: rgba(255, 255, 255, 0.08);
+      --ring: rgba(59, 130, 246, 0.35);
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(to bottom, var(--bg-1), var(--bg-2) 50%, var(--bg-3));
+    }
+    .glass {
+      backdrop-filter: saturate(1.25) blur(10px);
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+    .tech-grid {
+      position: relative;
+      isolation: isolate;
+    }
+    .tech-grid::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+      background-size: 22px 22px;
+      mask-image: radial-gradient(80% 60% at 50% 0%, black 10%, transparent 70%);
+      opacity: 0.6;
+    }
+    .focus-ring:focus-visible {
+      outline: 2px solid rgba(59,130,246,0.7);
+      outline-offset: 2px;
+      border-radius: .75rem;
+    }
+  </style>
+</head>
+<body class="text-slate-200 antialiased selection:bg-blue-500/20 selection:text-blue-100">
+
+  <header class="sticky top-0 z-50 bg-[#0b1220] border-b border-slate-800 shadow">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="./index.html" class="flex items-center gap-3">
+          <img src="./img/logo.png" alt="Triad Logo" class="h-10 w-10 rounded-lg border border-blue-400/40 shadow"/>
+          <span class="font-extrabold text-lg tracking-wide text-blue-200">TRIAD AEROSPACE</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 font-medium">
+          <a href="./index.html" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">Home</a>
+          <a href="./index.html#about" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">About</a>
+          <a href="./index.html#services" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">Services</a>
+          <a href="./index.html#parts" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">Parts</a>
+          <a href="./index.html#contact" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">Quote</a>
+          <a href="./privacy.html" class="text-slate-300 hover:text-white transition hover:underline underline-offset-8 decoration-blue-500/60">Privacy</a>
+        </div>
+
+        <button id="mobile-menu-button"
+                class="md:hidden p-2 text-slate-200 hover:text-white focus-ring"
+                aria-label="Open menu"
+                aria-haspopup="true"
+                aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-8 6h8" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="menu-backdrop" class="fixed inset-0 bg-black/60 z-30 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out"></div>
+  
+  <div id="mobile-menu" class="fixed top-0 left-0 h-full w-full max-w-xs bg-[#0b1220] z-40 p-6 shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="flex justify-end mb-8">
+      <button id="close-menu-button" class="p-2 text-slate-200 hover:text-white focus-ring" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col space-y-6">
+      <a href="./index.html" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">Home</a>
+      <a href="./index.html#about" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">About</a>
+      <a href="./index.html#services" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">Services</a>
+      <a href="./index.html#parts" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">Parts</a>
+      <a href="./index.html#contact" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">Quote</a>
+      <a href="./privacy.html" class="text-xl text-slate-200 hover:text-blue-300 transition-colors">Privacy</a>
+    </nav>
+  </div>
+
+  <div class="tech-grid">
+    <main class="py-16 sm:py-24">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white">Privacy Policy</h1>
+        <p class="mt-2 text-slate-400">Last Updated: September 13, 2025</p>
+      </div>
+      
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 mt-10">
+        <div class="glass rounded-2xl p-8 sm:p-10 space-y-6 text-slate-300 text-left">
+          <p>Welcome to TRIAD AEROSPACE LL. We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p>
+          
+          <div class="space-y-2">
+            <h2 class="text-2xl font-bold text-blue-200">Information We Collect</h2>
+            <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>
+            <ul class="list-disc list-inside space-y-1 pl-4">
+              <li><strong>Personal Data:</strong> Personally identifiable information, such as your name, shipping address, email address, and telephone number, that you voluntarily give to us when you request a quote or contact us.</li>
+              <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.</li>
+            </ul>
+          </div>
+          
+          <div class="space-y-2">
+            <h2 class="text-2xl font-bold text-blue-200">How We Use Your Information</h2>
+            <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:</p>
+            <ul class="list-disc list-inside space-y-1 pl-4">
+              <li>Respond to your product and customer service requests.</li>
+              <li>Compile anonymous statistical data and analysis for use internally.</li>
+              <li>Increase the efficiency and operation of the Site.</li>
+              <li>Monitor and analyze usage and trends to improve your experience with the Site.</li>
+            </ul>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="text-2xl font-bold text-blue-200">Cookie Policy</h2>
+            <p>We use cookies to help customize the Site and improve your experience. When you access the Site, your personal information is not collected through the use of tracking technology. Most browsers are set to accept cookies by default. You can remove or reject cookies, but be aware that such action could affect the availability and functionality of the Site.</p>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="text-2xl font-bold text-blue-200">Data Security</h2>
+            <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.</p>
+          </div>
+          
+          <div class="space-y-2">
+            <h2 class="text-2xl font-bold text-blue-200">Contact Us</h2>
+            <p>If you have questions or comments about this Privacy Policy, please contact us at <a href="mailto:sales@triadaerospace.com" class="text-blue-300 hover:underline">sales@triadaerospace.com</a>.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="relative text-center text-slate-100 py-10 border-t border-slate-800"
+          style="background: url('./img/turbinenew.png') center/cover no-repeat;">
+    <div class="absolute inset-0 bg-black/70 pointer-events-none"></div>
+    <div class="relative z-10 space-y-2">
+      <p class="font-bold text-lg">TRIAD AEROSPACE LL &copy; 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const openMenuBtn = document.getElementById('mobile-menu-button');
+      const closeMenuBtn = document.getElementById('close-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const backdrop = document.getElementById('menu-backdrop');
+      const menuLinks = mobileMenu.querySelectorAll('a');
+
+      const openMenu = () => {
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100', 'pointer-events-auto');
+        mobileMenu.classList.remove('-translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+        document.body.style.overflow = 'hidden';
+        openMenuBtn.setAttribute('aria-expanded', 'true');
+      };
+
+      const closeMenu = () => {
+        mobileMenu.classList.add('-translate-x-full');
+        mobileMenu.classList.remove('translate-x-0');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+        document.body.style.overflow = '';
+        openMenuBtn.setAttribute('aria-expanded', 'false');
+      };
+
+      openMenuBtn.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('-translate-x-full')) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      });
+
+      closeMenuBtn.addEventListener('click', closeMenu);
+      backdrop.addEventListener('click', closeMenu);
+      menuLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('-translate-x-full')) {
+          closeMenu();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
